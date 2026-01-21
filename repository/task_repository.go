@@ -48,7 +48,7 @@ func (tr *TaskRepository) GetTask() ([]model.Task, error) {
 
 func (tr *TaskRepository) CreateTask(task model.Task) (int, error) {
 	var id int
-	query, err := tr.connection.Prepare("INSERT INTO task(task_name, hours) VALUES($1, $2) RETURNING id")
+	query, err := tr.connection.Prepare("INSERT INTO tasks(task_name, hours) VALUES($1, $2) RETURNING id")
 	if err != nil {
 		fmt.Println(err)
 		return 0, err
