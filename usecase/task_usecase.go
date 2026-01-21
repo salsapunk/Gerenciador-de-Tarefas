@@ -28,3 +28,21 @@ func (tu *TaskUsecase) CreateTask(task model.Task) (model.Task, error) {
 	task.ID = taskId
 	return task, nil
 }
+
+func (tu *TaskUsecase) GetTaskById(id_task int) (*model.Task, error) {
+	task, err := tu.repository.GetTaskById(id_task)
+	if err != nil {
+		return nil, err
+	}
+
+	return task, nil
+}
+
+//func (tu *TaskUsecase) GetTaskByName(task_name string) (*model.Task, error) {
+//	task, err := tu.repository.GetTaskByName(task_name)
+//	if err != nil {
+//		return nil, err
+//	}
+//
+//	return task, nil
+//}

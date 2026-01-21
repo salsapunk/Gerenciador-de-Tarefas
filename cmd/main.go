@@ -29,9 +29,16 @@ func main() {
 		})
 	})
 
-	server.GET("/tasks", TaskController.GetTasks)
-	server.POST("/task", TaskController.CreateTask)
-	server.GET("task/:taskId", TaskController.GetTaskById)
+	// mostrar
+	server.GET("GET/tasks", TaskController.GetTasks)
+	// adicionar
+	server.POST("POST/task", TaskController.CreateTask)
+	// mostar por id
+	server.GET("GET/task/:taskId", TaskController.GetTaskById)
+	// atualizar
+	// server.PUT("PUT task/:taskid", TaskController.UpdateTask)
+	// deletar por nome
+	// server.DELETE("DELETE tasks/:taskName", TaskController.DeleteTaskByName)
 
 	server.Run(":8080")
 }

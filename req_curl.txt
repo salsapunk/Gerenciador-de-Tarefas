@@ -1,0 +1,5 @@
+:Comandos pra quem quer usar o curl ao invés do postman:
+
+GET -> curl localhost:8080/GET/(porta)
+POST -> curl -X POST -H "Content-Type: application/json" -d '{}' localhost:8080/POST/task
+GET -> curl localhost:8080/GET/(porta)/:(id_pra_procurar)
